@@ -33,7 +33,7 @@ export default class AssetManager{
     }
 
     audio(chave){
-        return this.audio.get(chave);
+        return this.audios.get(chave);
     }
 
     progresso(){
