@@ -1,7 +1,7 @@
  export default class Cena {
      /* É responsável por desenhar elementos na tela em uma animação
      */
-     constructor(canvas){
+     constructor(canvas, assets = null){
          this.canvas = canvas;
          this.ctx = canvas.getContext("2d");
          this.sprites = []; 
@@ -9,6 +9,7 @@
          this.t0 = 0;
          this.dt = 0;
          this.idAnim = null;
+         this.assets = assets;
      }
      desenhar(){
          this.ctx.fillStyle = "grey";
@@ -17,6 +18,8 @@
              const sprite = this.sprites[s];
              sprite.desenhar(this.ctx);
          }
+         this.ctx.fillStyle = "yellow";
+         this.ctx.fillText(this.assets?.progresso(), 10, 20);
      }
      adicionar(sprite){
          this.sprites.push(sprite);
