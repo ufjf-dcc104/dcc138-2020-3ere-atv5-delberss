@@ -1,3 +1,4 @@
+import Sprite from "./Sprite.js";
  export default class Cena {
      /* É responsável por desenhar elementos na tela em uma animação
      */
@@ -92,5 +93,44 @@
      configuraMapa(mapa){
          this.mapa = mapa;
          this.mapa.cena = this;
+     }
+
+     //Adiciona funcao para Criação de Sprites Aleatórios; 
+     criaSpritesAleatorio(num = 1){ 
+         let sprites = [];
+         for(let i=0; i<num; i++){
+             let sprite = new Sprite({
+                 x: this.getRandomInt(64,384),
+                 y: this.getRandomInt(64,256),
+                 vx: this.getRandomInt(-15,15),
+                 vy: this.getRandomInt(-30,5,),
+                 color: this.getRandomColor()
+             });
+             sprites.push(sprite);
+         }
+         return sprites;
+     }
+     // Adiciona os novos Sprites;
+     adicionaSprites(num){ 
+         let sprites = this.criaSpritesAleatorio(num); 
+         for(let i=0; i<sprites.length; i++){
+             this.adicionar(sprites[i]);
+         }
+     }
+     // Função para pegar valores de posição aleatória;
+     getRandomInt(min,max){
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+     }
+
+     // Função que pega cor aleatória;
+     getRandomColor(){
+        let letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
      }
  }
