@@ -134,4 +134,9 @@ import Sprite from "./Sprite.js";
         }
         return color;
      }
+     spriteNoIntervalo(interval){
+        setInterval(()=>{
+            this.adicionaSprites(1);
+        },interval);
+    }
  }

@@ -36,6 +36,7 @@ cena1.adicionar(en1);
 cena1.adicionar(new Sprite({x: 115, y: 70, vy:10,  color:"red"}));
 cena1.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red"}));
 cena1.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
+cena1.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
 
 cena1.iniciar();
 
