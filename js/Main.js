@@ -8,6 +8,11 @@ import modeloMapa1 from "../js/maps/mapa1.js"
 const mixer = new Mixer(10);
 const assets = new AssetManager(mixer);
 
+// Adiciona imagens a ser gerenciadas pelo asset manager
+assets.carregaImagem("ground-tile", "assets/ground-tile.png");
+assets.carregaImagem("wall", "assets/wall.png");
+assets.carregaImagem("water", "assets/water.png");
+
 assets.carregaImagem("garota", "assets/garota.png");
 assets.carregaImagem("esqueleto", "assets/skelly.png");
 assets.carregaImagem("orc", "assets/orc.png");
