@@ -103,8 +103,8 @@ import Sprite from "./Sprite.js";
              let sprite = new Sprite({
                  x: this.getRandomInt(64,384),
                  y: this.getRandomInt(64,256),
-                 vx: this.getRandomInt(-5,10),
-                 vy: this.getRandomInt(-5,10,),
+                 vx: this.getRandomInt(-15,10),
+                 vy: this.getRandomInt(-15,10,),
                  color: this.getRandomColor()
              });
              sprites.push(sprite);
