@@ -74,6 +74,7 @@ import Sprite from "./Sprite.js";
          }
      }
      quandoColidir(a,b){
+        this.assets.play("boom");
         if(!this.aRemover.includes(a)){
             this.aRemover.push(a); 
         }
@@ -102,8 +103,8 @@ import Sprite from "./Sprite.js";
              let sprite = new Sprite({
                  x: this.getRandomInt(64,384),
                  y: this.getRandomInt(64,256),
-                 vx: this.getRandomInt(-15,15),
-                 vy: this.getRandomInt(-30,5,),
+                 vx: this.getRandomInt(-5,10),
+                 vy: this.getRandomInt(-5,10,),
                  color: this.getRandomColor()
              });
              sprites.push(sprite);
