@@ -24,7 +24,6 @@ export default class Mapa {
                         ctx.strokeStyle = "black";
                         */
                         ctx.drawImage(this.cena.assets.img("wall"), c*this.SIZE, l*this.SIZE);
-
                         break;
                     case 2:
                         /*
@@ -34,6 +33,7 @@ export default class Mapa {
                         break;
                         */
                         ctx.drawImage(this.cena.assets.img("water"), c*this.SIZE, l*this.SIZE);
+                        break
                     default:
                         /*
                         ctx.fillStyle = "black";
@@ -41,6 +41,7 @@ export default class Mapa {
                         ctx.strokeStyle = "grey";
                         */
                         ctx.drawImage(this.cena.assets.img("ground-tile"), c*this.SIZE, l*this.SIZE);
+                        break
                     }
                     /*
                     ctx.fillRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE);
