@@ -11,7 +11,8 @@ import Sprite from "./Sprite.js";
          this.dt = 0;
          this.idAnim = null;
          this.assets = assets;
-         this.mapa = null;
+         this.mapa = null,
+         this.game = null;
      }
      desenhar(){
          this.ctx.fillStyle = "lightblue";
