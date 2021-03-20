@@ -31,6 +31,8 @@ canvas.height = 10*32;
 input.configurarTeclado({
     "ArrowLeft": "MOVE_ESQUERDA",
     "ArrowRight": "MOVE_DIREITA",
+    "ArrowUp": "MOVE_CIMA",
+    "ArrowDown": "MOVE_BAIXO"
     });
  
 const ctx = canvas.getContext("2d");
@@ -51,6 +53,14 @@ pc.controlar = function(dt){
     } else{
       this.vx = 0;
     }
+
+    if(input.comandos.get("MOVE_CIMA")){
+        this.vy = -50;
+      } else if(input.comandos.get("MOVE_BAIXO")){
+        this.vy = +50;
+      } else{
+        this.vy = 0;
+      }
   }
 
 const en1 = new Sprite({x: 160, vx: - 10, color:"red"});
