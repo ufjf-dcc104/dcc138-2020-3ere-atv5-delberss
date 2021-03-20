@@ -85,15 +85,15 @@ cena1.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red",controlar: pers
 //cena1.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
 cena1.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
 
-cena1.iniciar();
+game.iniciar();
 
 document.addEventListener("keydown",  (e)=>{
     switch (e.key) {
         case "s":
-            cena1.iniciar();
+            game.iniciar();
             break;
         case "S":
-            cena1.parar();
+            game.parar();
             break;
         case "c":
             assets.play("moeda");
