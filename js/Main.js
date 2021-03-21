@@ -37,8 +37,6 @@ input.configurarTeclado({
     });
 
 const game = new Game(canvas, assets, input);
- 
-const ctx = canvas.getContext("2d");
 
 const cena0 = new CenaCarregando();
 const cena1 = new CenaJogo();

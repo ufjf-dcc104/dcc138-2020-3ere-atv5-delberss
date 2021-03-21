@@ -16,11 +16,8 @@ export default class Sprite{
         this.controlar = controlar;
         this.tags = new Set();
         tags.forEach((tag)=>{
-            this.tags.add(tags);
+            this.tags.add(tag);
         });
-
-        for (let i = 0; i < tags.length; i++) {
-        }
     }
     desenhar(ctx){
         ctx.fillStyle = this.color;

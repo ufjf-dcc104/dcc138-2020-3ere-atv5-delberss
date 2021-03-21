@@ -8,6 +8,7 @@ import Sprite from "./Sprite.js";
          this.assets = assets;
          this.game = null;
          this.preparar();
+         this.sprites = [];
      }
      desenhar(){
          this.ctx.fillStyle = "lightblue";
