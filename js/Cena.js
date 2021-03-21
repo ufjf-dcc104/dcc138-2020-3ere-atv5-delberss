@@ -9,6 +9,7 @@ import Sprite from "./Sprite.js";
          this.sprites = [];
          this.game = null;
          this.pontos = 0;
+         this.mapaAtual = null;
          this.preparar();
      }
      desenhar(){
@@ -144,7 +145,7 @@ import Sprite from "./Sprite.js";
         },interval);
     }
 
-    preparar(){
+    preparar(mapa){
         this.sprites = []; 
         this.aRemover = []; 
         this.t0 = null;
@@ -152,5 +153,6 @@ import Sprite from "./Sprite.js";
         this.idAnim = null;
         this.mapa = null;
         this.rodando = true;
+        this.mapaAtual = mapa;
     }
  }

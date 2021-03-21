@@ -1,10 +1,17 @@
 import Cena from "./Cena.js";
 import Mapa from "./Mapa.js";
 import modeloMapa1 from "../js/maps/mapa1.js"
+import modeloMapa2 from "../js/maps/mapa2.js"
 import Sprite from "./Sprite.js";
 
 export default class CenaJogo extends Cena {
   quandoColidir(a,b){
+    // observa bau
+    if(a.tags.has("pc") && b.tags.has("bau") || b.tags.has("pc") && a.tags.has("bau"))
+    {
+      this.preparar(modeloMapa2);
+      return;
+    }
     if(a.tags.has("pc") && b.tags.has("moeda") || b.tags.has("pc") && a.tags.has("moeda")){
       if (!this.aRemover.includes(a) && a.tags.has("moeda")){
         this.aRemover.push(a);
@@ -27,11 +34,12 @@ export default class CenaJogo extends Cena {
       this.game.selecionaCena("fim");
     }
  }
- preparar(){
-    super.preparar();
-    const mapa1 = new Mapa(10, 14, 32);
-    mapa1.carregaMapa(modeloMapa1);
-    this.configuraMapa(mapa1);
+ preparar(modeloMapa = modeloMapa1){
+    super.preparar(modeloMapa);
+    this.mapaAtual = modeloMapa;
+    const mapa = new Mapa(10, 14, 32);
+    mapa.carregaMapa(modeloMapa);
+    this.configuraMapa(mapa);
     
     
     const pc = new Sprite({x: 50, y: 150});
@@ -75,6 +83,7 @@ export default class CenaJogo extends Cena {
     this.adicionar(new Sprite({x: 340, y: 50, color: "gold", tags: ["moeda"]}));
     this.adicionar(new Sprite({x: 150, y: 250, color: "gold", tags: ["moeda"]}));
     this.adicionar(new Sprite({x: 380, y: 250, color: "gold", tags: ["moeda"]}));
+    this.adicionar(new Sprite({x: 380, y: 210, color: "orange", tags: ["bau"]}));
 
  }
 
