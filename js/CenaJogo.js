@@ -5,14 +5,24 @@ import Sprite from "./Sprite.js";
 
 export default class CenaJogo extends Cena {
   quandoColidir(a,b){
-    this.assets.play("boom");
-    if(!this.aRemover.includes(a)){
-        this.aRemover.push(a); 
+    if(a.tags.has("pc") && b.tags.has("moeda") || b.tags.has("pc") && a.tags.has("moeda")){
+      if (!this.aRemover.includes(a) && a.tags.has("moeda")){
+        this.aRemover.push(a);
+      }
+      if (!this.aRemover.includes(b) && b.tags.has("moeda")){
+        this.aRemover.push(b);
+        this.assets.play("moeda");
+        return;
+      }
     }
-    if(!this.aRemover.includes(b)){
-        this.aRemover.push(b); 
+    if (!this.aRemover.includes(a)){
+      this.aRemover.push(a);
     }
-    if(a.tags.has("pc") && b.tags.has("enemy")) {
+    if (!this.aRemover.includes(b)){
+      this.aRemover.push(b);
+    }
+    if (a.tags.has("pc") && b.tags.has("enemy") || b.tags.has("pc") && a.tags.has("enemy")){
+      this.assets.play("boom");
       this.game.selecionaCena("fim");
     }
  }
@@ -28,17 +38,17 @@ export default class CenaJogo extends Cena {
     const cena = this;
     pc.controlar = function(dt){
         if(cena.input.comandos.get("MOVE_ESQUERDA")){
-          this.vx = -50;
+          this.vx = -100;
         } else if(cena.input.comandos.get("MOVE_DIREITA")){
-          this.vx = +50;
+          this.vx = +100;
         } else{
           this.vx = 0;
         }
     
         if(cena.input.comandos.get("MOVE_CIMA")){
-            this.vy = -50;
+            this.vy = -100;
           } else if(cena.input.comandos.get("MOVE_BAIXO")){
-            this.vy = +50;
+            this.vy = +100;
           } else{
             this.vy = 0;
           }
@@ -60,6 +70,10 @@ export default class CenaJogo extends Cena {
     this.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"]}));
     //this.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
     //this.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
+    this.adicionar(new Sprite({x: 50, y: 120, color: "gold", tags: ["moeda"]}));
+    this.adicionar(new Sprite({x: 340, y: 50, color: "gold", tags: ["moeda"]}));
+    this.adicionar(new Sprite({x: 150, y: 250, color: "gold", tags: ["moeda"]}));
+    this.adicionar(new Sprite({x: 380, y: 250, color: "gold", tags: ["moeda"]}));
 
  }
 
