@@ -6,9 +6,10 @@ import Sprite from "./Sprite.js";
          this.canvas = canvas;
          this.ctx = canvas?.getContext("2d");
          this.assets = assets;
-         this.game = null;
-         this.preparar();
          this.sprites = [];
+         this.game = null;
+         this.pontos = 0;
+         this.preparar();
      }
      desenhar(){
          this.ctx.fillStyle = "lightblue";
@@ -23,10 +24,9 @@ import Sprite from "./Sprite.js";
                  sprite.aplicaRestricoes();
              }
          }
-         /*
          this.ctx.fillStyle = "yellow";
-         this.ctx.fillText(this.assets?.progresso(), 10, 20);
-         */
+         this.ctx.fillText("Pontuação:" + this.pontos*2,40,20);
+         //this.ctx.fillText(this.assets?.progresso(), 10, 20);
      }
      adicionar(sprite){
          sprite.cena = this;

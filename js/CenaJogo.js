@@ -12,6 +12,7 @@ export default class CenaJogo extends Cena {
       if (!this.aRemover.includes(b) && b.tags.has("moeda")){
         this.aRemover.push(b);
         this.assets.play("moeda");
+        this.pontos++;
         return;
       }
     }

@@ -13,6 +13,12 @@ export default class CenaFim extends Cena {
           this.canvas.width / 2.5,
           this.canvas.height / 2
         );
+
+        this.ctx.fillText(
+          "Sua pontuação: " +this.pontos,
+          this.canvas.width / 2.8,
+          this.canvas.height / 2 + 80
+        );
     
         if (this.assets.acabou()) {
             this.ctx.fillStyle = "yellow";
