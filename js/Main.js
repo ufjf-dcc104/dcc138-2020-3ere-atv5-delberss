@@ -6,6 +6,8 @@ import Mapa from "./Mapa.js";
 import modeloMapa1 from "../js/maps/mapa1.js"
 import InputManager from "./InputManager.js";
 import Game from "./Game.js";
+import CenaJogo from "./CenaJogo.js";
+import CenaCarregando from "./CenaCarregando.js";
 
 const input = new InputManager();
 const mixer = new Mixer(10);
@@ -40,7 +42,10 @@ const game = new Game(canvas, assets, input);
  
 const ctx = canvas.getContext("2d");
 
-const cena1 = new Cena(canvas,assets);
+const cena0 = new CenaCarregando(canvas, assets);
+const cena1 = new CenaJogo(canvas, assets);
+game.adicionarCena("carregando", cena0);
+
 game.adicionarCena("jogo", cena1);
 
 const mapa1 = new Mapa(10, 14, 32);
