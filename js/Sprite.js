@@ -2,7 +2,7 @@ export default class Sprite{
     /*
         É responsável por modelar algo que se move na tela.
     */
-    constructor({x = 100, y = 100, w = 20, h = 20, color = "white",vx =0, vy=0, controlar = ()=>{}, tags = [] } = {}){
+    constructor({x = 100, y = 100, w = 20, h = 20, color = "white",vx =0, vy=0, controlar = ()=>{}, tags = [], assets = null } = {}){
         this.x = x;
         this.y = y;
         this.vx = vx;
@@ -13,6 +13,7 @@ export default class Sprite{
         this.cena = null;
         this.mx = 0;
         this.my = 0;
+        this.assets = assets;
         this.controlar = controlar;
         this.tags = new Set();
         tags.forEach((tag)=>{
@@ -20,8 +21,16 @@ export default class Sprite{
         });
     }
     desenhar(ctx){
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x - this.w/2,this.y - this.h/2,this.w, this.h);
+        if(this.tags.has("bau")){
+            ctx.drawImage(this.assets.img("bau"), 0, 0, 50, 37, this.x - this.w / 2, this.y - this.h / 2, 50, 37);
+        }
+        else if(this.tags.has("moeda")){
+            ctx.drawImage(this.assets.img("moeda"), 0, 0, 50, 37, this.x - this.w / 2, this.y - this.h / 2, 50, 37);
+        }
+        else{
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x - this.w/2,this.y - this.h/2,this.w, this.h);
+        }
         ctx.strokeStyle = "blue";
         ctx.strokeRect(
         this.mx*this.cena.mapa.SIZE,

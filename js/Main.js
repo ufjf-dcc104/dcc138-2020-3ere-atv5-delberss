@@ -14,11 +14,15 @@ const assets = new AssetManager(mixer);
 assets.carregaImagem("ground-tile", "assets/ground-tile.png");
 assets.carregaImagem("wall", "assets/wall.png");
 assets.carregaImagem("water", "assets/water.png");
+assets.carregaImagem("moeda", "assets/moeda.png");
+assets.carregaImagem("fogo", "assets/fogo.png");
+
+assets.carregaImagem("bau", "assets/Golden.png");
 
 assets.carregaImagem("garota", "assets/garota.png");
 assets.carregaImagem("esqueleto", "assets/skelly.png");
 assets.carregaImagem("orc", "assets/orc.png");
-assets.carregaAudio("moeda", "assets/coin.wav");
+assets.carregaAudio("som-moeda", "assets/coin.wav");
 assets.carregaAudio("boom", "assets/boom.wav");
 
 

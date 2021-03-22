@@ -34,6 +34,9 @@ export default class Mapa {
                         */
                         ctx.drawImage(this.cena.assets.img("water"), c*this.SIZE, l*this.SIZE);
                         break
+                    case 3:
+                        ctx.drawImage(this.cena.assets.img("fogo"), c*this.SIZE, l*this.SIZE);
+                        break
                     default:
                         /*
                         ctx.fillStyle = "black";

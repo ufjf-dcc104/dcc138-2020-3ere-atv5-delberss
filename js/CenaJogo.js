@@ -18,7 +18,7 @@ export default class CenaJogo extends Cena {
       }
       if (!this.aRemover.includes(b) && b.tags.has("moeda")){
         this.aRemover.push(b);
-        this.assets.play("moeda");
+        this.assets.play("som-moeda");
         this.pontos++;
         return;
       }
@@ -32,6 +32,7 @@ export default class CenaJogo extends Cena {
     if (a.tags.has("pc") && b.tags.has("enemy") || b.tags.has("pc") && a.tags.has("enemy")){
       this.assets.play("boom");
       this.game.selecionaCena("fim");
+      this.pontos = 0;
     }
  }
  preparar(modeloMapa = modeloMapa1){
@@ -42,7 +43,7 @@ export default class CenaJogo extends Cena {
     this.configuraMapa(mapa);
     
     
-    const pc = new Sprite({x: 50, y: 150});
+    const pc = new Sprite({x: 50, y: 150,assets: this.assets});
     pc.tags.add("pc");
     const cena = this;
     pc.controlar = function(dt){
@@ -79,11 +80,11 @@ export default class CenaJogo extends Cena {
     this.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"]}));
     //this.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
     //this.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
-    this.adicionar(new Sprite({x: 50, y: 120, color: "gold", tags: ["moeda"]}));
-    this.adicionar(new Sprite({x: 340, y: 50, color: "gold", tags: ["moeda"]}));
-    this.adicionar(new Sprite({x: 150, y: 250, color: "gold", tags: ["moeda"]}));
-    this.adicionar(new Sprite({x: 380, y: 250, color: "gold", tags: ["moeda"]}));
-    this.adicionar(new Sprite({x: 380, y: 210, color: "orange", tags: ["bau"]}));
+    this.adicionar(new Sprite({x: 50, y: 120, color: "gold", tags: ["moeda"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 340, y: 50, color: "gold", tags: ["moeda"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 150, y: 250, color: "gold", tags: ["moeda"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 380, y: 250, color: "gold", tags: ["moeda"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 380, y: 210, color: "orange", tags: ["bau"], assets: this.assets}));
 
  }
 
