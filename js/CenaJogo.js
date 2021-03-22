@@ -20,7 +20,11 @@ export default class CenaJogo extends Cena {
       if (!this.aRemover.includes(b) && b.tags.has("moeda")){
         this.aRemover.push(b);
         this.assets.play("som-moeda");
-        this.pontos++;
+        this.game.pontos++;
+        this.game.pontuacaoFinal = this.game.pontos;
+        if(this.game.pontos == 6){
+          this.game.selecionaCena("fim");
+        }
         return;
       }
     }
@@ -33,7 +37,6 @@ export default class CenaJogo extends Cena {
     if (a.tags.has("pc") && b.tags.has("enemy") || b.tags.has("pc") && a.tags.has("enemy")){
       this.assets.play("boom");
       this.game.selecionaCena("fim");
-      this.pontos = 0;
     }
  }
  preparar(modeloMapa = modeloMapa1){

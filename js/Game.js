@@ -6,6 +6,8 @@ export default class Game {
         this.input = input
         this.cenas = new Map();
         this.cena = null;
+        this.pontos = 0;
+        this.pontuacaoFinal;
     }
     adicionarCena(chave, cena){
         this.cenas.set(chave, cena);

@@ -2,20 +2,29 @@ import Cena from "./Cena.js";
 
 export default class CenaFim extends Cena {
     desenhar() {
-    
         this.ctx.fillStyle = "black";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.font = "20px Impact";
-        this.ctx.fillStyle = "red";
         this.ctx.TextAlign = "center";
-        this.ctx.fillText(
-          "GAME OVER",
-          this.canvas.width / 2.5,
-          this.canvas.height / 2
-        );
+        this.ctx.fillStyle = "red";
+        if(this.game.pontuacaoFinal == 6){
+          this.ctx.fillStyle = "green";
+          this.ctx.fillText(
+            "VOCÊ VENCEU!",
+            this.canvas.width / 2.5,
+            this.canvas.height / 2
+          );
+
+        }else{
+          this.ctx.fillText(
+            "GAME OVER",
+            this.canvas.width / 2.5,
+            this.canvas.height / 2
+          );
+        }
 
         this.ctx.fillText(
-          "Sua pontuação: " +this.pontos,
+          "Sua pontuação: " +this.game.pontuacaoFinal,
           this.canvas.width / 2.8,
           this.canvas.height / 2 + 80
         );
@@ -28,6 +37,7 @@ export default class CenaFim extends Cena {
             this.canvas.height / 2 + 40
           );
         }
+        this.game.pontos = 0;
     }
 
     quadro(t) {

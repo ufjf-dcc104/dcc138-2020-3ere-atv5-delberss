@@ -8,7 +8,6 @@ import Sprite from "./Sprite.js";
          this.assets = assets;
          this.sprites = [];
          this.game = null;
-         this.pontos = 0;
          this.mapaAtual = null;
          this.preparar();
      }
@@ -26,7 +25,7 @@ import Sprite from "./Sprite.js";
              }
          }
          this.ctx.fillStyle = "yellow";
-         this.ctx.fillText("Pontuação:" + this.pontos*2,40,20);
+         this.ctx.fillText("Pontuação:" + this.game.pontos,40,20);
          //this.ctx.fillText(this.assets?.progresso(), 10, 20);
      }
      adicionar(sprite){
