@@ -30,8 +30,8 @@ assets.carregaAudio("proximoMapa", "assets/proximoMapa.wav");
 
 
 const canvas = document.querySelector("canvas");
-canvas.width = 14*32;
-canvas.height = 10*32;
+canvas.width = 16*32;
+canvas.height = 11*32;
 
 input.configurarTeclado({
     ArrowLeft: "MOVE_ESQUERDA",
