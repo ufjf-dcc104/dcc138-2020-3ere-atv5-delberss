@@ -24,6 +24,7 @@ assets.carregaImagem("esqueleto", "assets/skelly.png");
 assets.carregaImagem("orc", "assets/orc.png");
 assets.carregaAudio("som-moeda", "assets/coin.wav");
 assets.carregaAudio("boom", "assets/boom.wav");
+assets.carregaAudio("proximoMapa", "assets/proximoMapa.wav");
 
 
 

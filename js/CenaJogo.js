@@ -10,6 +10,7 @@ export default class CenaJogo extends Cena {
     if(a.tags.has("pc") && b.tags.has("bau") || b.tags.has("pc") && a.tags.has("bau"))
     {
       this.preparar(modeloMapa2);
+      this.assets.play("proximoMapa");
       return;
     }
     if(a.tags.has("pc") && b.tags.has("moeda") || b.tags.has("pc") && a.tags.has("moeda")){
