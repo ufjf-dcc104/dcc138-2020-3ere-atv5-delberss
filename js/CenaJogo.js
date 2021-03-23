@@ -93,8 +93,10 @@ export default class CenaJogo extends Cena {
     this.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"], assets: this.assets}));
     this.adicionar(new Sprite({x: 405, y: 90, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"], assets: this.assets}));
 
-    //this.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
-    //this.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
+    if(this.mapaAtual == modeloMapa2 || this.mapaAtual == modeloMapa3){
+      //this.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
+      this.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
+    }
     this.adicionar(new Sprite({x: 50, y: 120, color: "gold", tags: ["moeda"], assets: this.assets}));
     this.adicionar(new Sprite({x: 340, y: 50, color: "gold", tags: ["moeda"], assets: this.assets}));
     this.adicionar(new Sprite({x: 150, y: 250, color: "gold", tags: ["moeda"], assets: this.assets}));

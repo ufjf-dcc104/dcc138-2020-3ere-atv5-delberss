@@ -109,7 +109,9 @@ import Sprite from "./Sprite.js";
                  y: this.getRandomInt(64,256),
                  vx: this.getRandomInt(-15,10),
                  vy: this.getRandomInt(-15,10,),
-                 color: this.getRandomColor()
+                 tags:["enemy"],
+                 assets: this.assets
+                 //color: this.getRandomColor()
              });
              sprites.push(sprite);
          }
