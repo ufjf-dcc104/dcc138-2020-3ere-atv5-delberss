@@ -22,7 +22,7 @@ export default class CenaJogo extends Cena {
         this.assets.play("som-moeda");
         this.game.pontos++;
         this.game.pontuacaoFinal = this.game.pontos;
-        if(this.game.pontos == 6){
+        if(this.game.pontos == 13){
           this.game.selecionaCena("fim");
         }
         return;
@@ -82,13 +82,19 @@ export default class CenaJogo extends Cena {
     this.adicionar(en1);
     this.adicionar(new Sprite({x: 115, y: 70, vy:10,  color:"red", controlar: perseguePC, tags:["enemy"]}));
     this.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"]}));
+    this.adicionar(new Sprite({x: 405, y: 90, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"]}));
+
     //this.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
     //this.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
     this.adicionar(new Sprite({x: 50, y: 120, color: "gold", tags: ["moeda"], assets: this.assets}));
     this.adicionar(new Sprite({x: 340, y: 50, color: "gold", tags: ["moeda"], assets: this.assets}));
     this.adicionar(new Sprite({x: 150, y: 250, color: "gold", tags: ["moeda"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 80, y: 220, color: "gold", tags: ["moeda"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 420, y: 290, color: "gold", tags: ["moeda"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 180, y: 110, color: "gold", tags: ["moeda"], assets: this.assets}));
     this.adicionar(new Sprite({x: 380, y: 250, color: "gold", tags: ["moeda"], assets: this.assets}));
     this.adicionar(new Sprite({x: 380, y: 210, color: "orange", tags: ["bau"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 460, y: 70, color: "orange", tags: ["bau"], assets: this.assets}));
 
  }
 

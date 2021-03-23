@@ -7,7 +7,7 @@ export default class CenaFim extends Cena {
         this.ctx.font = "20px Impact";
         this.ctx.TextAlign = "center";
         this.ctx.fillStyle = "red";
-        if(this.game.pontuacaoFinal == 6){
+        if(this.game.pontuacaoFinal == 13){
           this.ctx.fillStyle = "green";
           this.ctx.fillText(
             "VOCÊ VENCEU!",
