@@ -2,6 +2,7 @@ import Cena from "./Cena.js";
 import Mapa from "./Mapa.js";
 import modeloMapa1 from "../js/maps/mapa1.js"
 import modeloMapa2 from "../js/maps/mapa2.js"
+import modeloMapa3 from "../js/maps/mapa3.js"
 import Sprite from "./Sprite.js";
 
 export default class CenaJogo extends Cena {
@@ -9,8 +10,16 @@ export default class CenaJogo extends Cena {
     // observa bau
     if(a.tags.has("pc") && b.tags.has("bau") || b.tags.has("pc") && a.tags.has("bau"))
     {
-      this.preparar(modeloMapa2);
       this.assets.play("proximoMapa");
+      if(this.mapaAtual == modeloMapa1){
+        this.preparar(modeloMapa2);
+      }
+      else if(this.mapaAtual == modeloMapa2){
+        this.preparar(modeloMapa3);
+      }
+      else if(this.mapaAtual == modeloMapa3){
+        this.preparar(modeloMapa1);
+      }
       return;
     }
     if(a.tags.has("pc") && b.tags.has("moeda") || b.tags.has("pc") && a.tags.has("moeda")){
