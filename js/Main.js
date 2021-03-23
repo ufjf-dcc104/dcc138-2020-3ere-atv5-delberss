@@ -16,6 +16,8 @@ assets.carregaImagem("wall", "assets/wall.png");
 assets.carregaImagem("water", "assets/water.png");
 assets.carregaImagem("moeda", "assets/moeda.png");
 assets.carregaImagem("fogo", "assets/fogo.png");
+assets.carregaImagem("ghost", "assets/Ghost.png");
+assets.carregaImagem("inimigo", "assets/inimigo.png");
 
 assets.carregaImagem("bau", "assets/Golden.png");
 

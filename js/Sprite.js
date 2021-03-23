@@ -24,6 +24,12 @@ export default class Sprite{
         if(this.tags.has("bau")){
             ctx.drawImage(this.assets.img("bau"), 0, 0, 50, 37, this.x - this.w / 2, this.y - this.h / 2, 50, 37);
         }
+        else if(this.tags.has("pc")){
+            ctx.drawImage(this.assets.img("ghost"), 0, 0, 50, 37, this.x - this.w / 2, this.y - this.h / 2, 50, 37);
+        }
+        else if(this.tags.has("enemy")){
+            ctx.drawImage(this.assets.img("inimigo"), 0, 0, 50, 37, this.x - this.w / 2, this.y - this.h / 2, 50, 37);
+        }
         else if(this.tags.has("moeda")){
             ctx.drawImage(this.assets.img("moeda"), 0, 0, 50, 37, this.x - this.w / 2, this.y - this.h / 2, 50, 37);
         }

@@ -76,13 +76,13 @@ export default class CenaJogo extends Cena {
           this.vy = 25*Math.sign(pc.y - this.y);
         }
         
-    const en1 = new Sprite({x: 260, color:"red", controlar: perseguePC, tags:["enemy"]});
+    const en1 = new Sprite({x: 260, color:"red", controlar: perseguePC, tags:["enemy"], assets: this.assets});
     en1.controlar = perseguePC;
     
     this.adicionar(en1);
-    this.adicionar(new Sprite({x: 115, y: 70, vy:10,  color:"red", controlar: perseguePC, tags:["enemy"]}));
-    this.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"]}));
-    this.adicionar(new Sprite({x: 405, y: 90, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"]}));
+    this.adicionar(new Sprite({x: 115, y: 70, vy:10,  color:"red", controlar: perseguePC, tags:["enemy"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 115, y: 160, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"], assets: this.assets}));
+    this.adicionar(new Sprite({x: 405, y: 90, vy:-10,  color:"red",controlar: perseguePC, tags:["enemy"], assets: this.assets}));
 
     //this.adicionaSprites(10); // Adiciona função para Sprites aleatorios.
     //this.spriteNoIntervalo(4000); // Função que cria sprites a cada intervalo de 4segs;
